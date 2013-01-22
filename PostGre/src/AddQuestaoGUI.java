@@ -44,6 +44,7 @@ public class AddQuestaoGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setEnabled(false);
 
         jLabel1.setText("Título");
 

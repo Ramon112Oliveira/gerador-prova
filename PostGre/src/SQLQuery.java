@@ -8,14 +8,30 @@ public class SQLQuery {
     JDBCExample post = new JDBCExample();
     
     
-    public void update(String a, String b){
+    public void update(int id_Questao, int id_fonte, boolean a, String Titulo, String Descricao, String A, String B, String C, String D, String E, int resposta){
         try{
-            String cod = a;
-            String tit = b;
-            String query = "INSERT INTO filmes(codigo, titulo) VALUES (?, ?)";
+            int idQuestao = id_Questao;
+            int idFonte = id_fonte;
+            //String titulo = Titulo;
+            //String descricao = Descricao;
+            //String a = A;
+            //String b = B;
+            //String c = C;
+            //String d = D;
+            //String e = E;
+            String query = "INSERT INTO tb_questoes (Id_questao, Id_fonte, privada, titulo, descricao, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             x = post.getConnection().prepareStatement(query);
-            x.setString(1,cod);
-            x.setString(2,tit);
+            x.setInt(1,idQuestao);
+            x.setInt(2,idFonte);
+            x.setBoolean(3,a);
+            x.setString(4,Titulo);
+            x.setString(5,Descricao);
+            x.setString(6,A);
+            x.setString(7,B);
+            x.setString(8,C);
+            x.setString(9,D);
+            x.setString(10, E);
+            x.setInt(11,resposta);
             x.executeUpdate();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"erro ao inserir no banco");
