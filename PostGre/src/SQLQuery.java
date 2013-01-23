@@ -1,28 +1,17 @@
 import java.sql.*;
-import javax.swing.*;
-import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 public class SQLQuery {
     PreparedStatement x = null;
     JDBCExample post = new JDBCExample();
+    String query = null;
     
-    
-    public void update(int id_Questao, int id_fonte, boolean a, String Titulo, String Descricao, String A, String B, String C, String D, String E, int resposta){
+    public void updateQuestoes(int id_Questao, int id_fonte, boolean a, String Titulo, String Descricao, String A, String B, String C, String D, String E, int resposta){
         try{
-            int idQuestao = id_Questao;
-            int idFonte = id_fonte;
-            //String titulo = Titulo;
-            //String descricao = Descricao;
-            //String a = A;
-            //String b = B;
-            //String c = C;
-            //String d = D;
-            //String e = E;
-            String query = "INSERT INTO tb_questoes (Id_questao, Id_fonte, privada, titulo, descricao, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            query = "INSERT INTO tb_questoes (Id_questao, Id_fonte, privada, titulo, descricao, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             x = post.getConnection().prepareStatement(query);
-            x.setInt(1,idQuestao);
-            x.setInt(2,idFonte);
+            x.setInt(1,id_Questao);
+            x.setInt(2,id_fonte);
             x.setBoolean(3,a);
             x.setString(4,Titulo);
             x.setString(5,Descricao);
@@ -37,6 +26,22 @@ public class SQLQuery {
             JOptionPane.showMessageDialog(null,"erro ao inserir no banco");
         }
     }
+    
+    public void updateQuestoesProva(int idquestoesprova, int idquestao, int idprova, int sequencia){
+        try{
+            query = "INSERT INTO tb_questoes_provas (idquestoesprova, idquestao, idprova, sequencia) VALUES(?, ?, ?, ?)";
+            x = post.getConnection().prepareStatement(query);
+            x.setInt(1,idquestoesprova);
+            x.setInt(2,idquestao);
+            x.setInt(3,idprova);
+            x.setInt(4,sequencia);
+            x.executeUpdate();
+            
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "erro ao inserir no banco");
+        }
+    }
+    
     
     public void rescue(){
         try{

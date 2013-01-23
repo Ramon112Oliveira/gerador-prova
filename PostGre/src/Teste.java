@@ -20,11 +20,14 @@ public class Teste {
         String entrada9 = JOptionPane.showInputDialog("D");
         String entrada10 = JOptionPane.showInputDialog("E");
         int resposta = Integer.parseInt(JOptionPane.showInputDialog("resposta de 1 a 5"));
-        sql.update(entrada1, entrada2, entrada3, entrada4,entrada5,entrada6,entrada7, entrada8,entrada9, entrada10, resposta);
+        
+        Questao q = new Questao(entrada1, entrada2, entrada3, entrada4,entrada5,entrada6,entrada7, entrada8,entrada9, entrada10, resposta);
+        sql.updateQuestoes(q.getIdQuestao(), q.getIdFonte(), q.getPrivada(), q.getTitulo(), q.getDescricao(),q.getAlternativaA(),q.getAlternativaB(), q.getAlternativaC(),q.getAlternativaD(), q.getAlternativaE(), resposta);
         //sql.rescue();
         //provas p = new provas();
        // System.out.println(p.q.getTitulo());
         /*JFrame novo = new TesteGUI();
         novo.setVisible(true);*/
+        
     }
 }

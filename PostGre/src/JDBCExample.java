@@ -21,7 +21,7 @@ public class JDBCExample {
 			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Simulador", "postgres","1234");
  
 		} catch (SQLException e) {
-			System.out.println("ConexÃ£o Falhou");
+			System.out.println("Conexao Falhou");
 			//e.printStackTrace();
 			return;
 		}
