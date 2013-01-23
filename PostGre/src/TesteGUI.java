@@ -99,7 +99,7 @@ public class TesteGUI extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddQuestaoGUI().setVisible(true);
+                new AddQuestoesGUI().setVisible(true);
             }
         });
     }//GEN-LAST:event_jButton5ActionPerformed

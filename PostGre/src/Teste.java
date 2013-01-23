@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class Teste {
     public static void main (String[] args){
-        SQLQuery sql = new SQLQuery();
+        /*SQLQuery sql = new SQLQuery();
         
         
         int entrada1 = Integer.parseInt(JOptionPane.showInputDialog("idquestao"));
@@ -25,9 +25,9 @@ public class Teste {
         sql.updateQuestoes(q.getIdQuestao(), q.getIdFonte(), q.getPrivada(), q.getTitulo(), q.getDescricao(),q.getAlternativaA(),q.getAlternativaB(), q.getAlternativaC(),q.getAlternativaD(), q.getAlternativaE(), resposta);
         //sql.rescue();
         //provas p = new provas();
-       // System.out.println(p.q.getTitulo());
-        /*JFrame novo = new TesteGUI();
-        novo.setVisible(true);*/
+       // System.out.println(p.q.getTitulo());*/
+        JFrame novo = new TesteGUI();
+        novo.setVisible(true);
         
     }
 }
