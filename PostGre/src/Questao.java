@@ -1,25 +1,43 @@
 import javax.swing.JOptionPane;
 
 public class Questao {
+    private int idQuestao;
+    private int idFonte;
+    private boolean privada;
     private String titulo;
     private String descricao;
-    //private boolean privada;
-    private String[] alternativas = new String[5];
+    private String alternativaA;
+    private String alternativaB;
+    private String alternativaC;
+    private String alternativaD;
+    private String alternativaE;
     private int resposta;
-    private String fonte;
     private int i; 
     
-    public Questao(String titulo, String descricao, String[] alternativas, int resposta, String fonte){
+    public Questao(int idquestao, int idfonte, boolean privada, String titulo, String descricao, String A, String B, String C, String D, String E, int resposta){
+        this.idQuestao = idquestao;
+        this.idFonte = idfonte;
         this.titulo = titulo;
         this.descricao = descricao;
-        //this.privada = false;
-        for(i = 0; i < 5; i++){
-            this.alternativas[i] = alternativas[i];
-        }////
-        //p.add();
-        //p.add();
+        this.privada = privada;
+        this.alternativaA = A;
+        this.alternativaB = B;
+        this.alternativaC = C;
+        this.alternativaD = D;
+        this.alternativaE = E;
         this.resposta = resposta;
-        this.fonte = fonte;
+    }
+    
+    public int getIdQuestao(){
+        return idQuestao;
+    }
+    
+    public int getIdFonte(){
+        return idFonte;
+    }
+    
+    public boolean getPrivada(){
+        return privada;
     }
     
     public String getTitulo(){
@@ -30,15 +48,27 @@ public class Questao {
         return descricao;
     }
     
-    public String[] getAlternativas(){
-        return alternativas;
+    public String getAlternativaA(){
+        return alternativaA;
     }
     
+    public String getAlternativaB(){
+        return alternativaB;
+    }
+    
+    public String getAlternativaC(){
+        return alternativaC;
+    }
+    
+    public String getAlternativaD(){
+        return alternativaD;
+    }
+    
+    public String getAlternativaE(){
+        return alternativaE;
+    }
     public int getResposta(){
         return resposta;
     }
     
-    public String getFonte(){
-        return fonte;
-    }
 }
