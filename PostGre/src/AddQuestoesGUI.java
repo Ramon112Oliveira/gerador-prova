@@ -8,7 +8,7 @@
  * @author naysinger
  */
 public class AddQuestoesGUI extends javax.swing.JFrame {
-
+    SQLQuery sql = new SQLQuery();
     /**
      * Creates new form AddQuestoesGUI
      */
@@ -47,7 +47,7 @@ public class AddQuestoesGUI extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Id Questao");
 
@@ -174,7 +174,6 @@ public class AddQuestoesGUI extends javax.swing.JFrame {
         String E = jTextField10.getText();
         int resp = Integer.parseInt(jTextField5.getText());
         Questao q = new Questao(idQuestao, idFonte, priv, titulo, descricao, A, B, C, D, E, resp);
-        SQLQuery sql = new SQLQuery();
         sql.updateQuestoes(q.getIdQuestao(), q.getIdFonte(), q.getPrivada(), q.getTitulo(), q.getDescricao(),q.getAlternativaA(),q.getAlternativaB(), q.getAlternativaC(),q.getAlternativaD(), q.getAlternativaE(), q.getResposta());
     }//GEN-LAST:event_jButton1ActionPerformed
 
