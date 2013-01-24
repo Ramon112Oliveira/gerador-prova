@@ -42,6 +42,37 @@ public class SQLQuery {
         }
     }
     
+    public void updateProvas(int idProva, int idUsuario, boolean situacao, String provaKey, Date dtCriacao, int tipo, String descricao){
+        try{
+            query = "INSERT INTO tb_provas (idprova, idusuario, situacao, provakey, dr_criacao, tipo, descricao) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            x = post.getConnection().prepareStatement(query);
+            x.setInt(1, idProva);
+            x.setInt(2, idUsuario);
+            x.setBoolean(3, situacao);
+            x.setString(4, provaKey);
+            x.setDate(5,dtCriacao);
+            x.setInt(6,tipo);
+            x.setString(7, descricao);
+            x.executeUpdate();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "erro ao inserir ao banco");
+        }
+    }
+    
+    public void updateUsuario(int idUsuarios, int privilegio, String nome, String email, String senha){
+        try{
+            query = "INSERT INTO tb_usuarios (idusuarios, privilegio, nome, email, senha) VALUES (?, ?, ?, ?, ?)";
+            x =post.getConnection().prepareStatement(query);
+            x.setInt(1, idUsuarios);
+            x.setInt(2, privilegio);
+            x.setString(3, nome);
+            x.setString(4,email);
+            x.setString(5, senha);
+            x.executeUpdate();
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "erro ao inserir no banco");
+        }
+    }
     
     public void rescue(){
         try{
