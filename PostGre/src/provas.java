@@ -1,35 +1,27 @@
-
-import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.*;
 
 public class provas {
-    private int id_prova_usuario;
-    //private int id_usuario;
     private int id_prova;
     private Date data;
-    private float desempenho;
+    private String titulo;
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private static final Date invalidDate = new Date(0);
     
     public ArrayList<Questao> q = new ArrayList();
     
     
-    public provas(int idProva, int idProvaUsuario, Date data){
+    public provas(int idProva, String titulo){
         
         this.id_prova = idProva;
-        this.id_prova_usuario = idProvaUsuario;
-        this.data = data;
+        this.titulo = titulo;
+        this.data = null;
         this.q = null;
-    }
-    
-    public float getDesempenho(){
-        return desempenho;
     }
     
     public int getIdProva(){
         return id_prova;
-    }
-    
-    public int getIdProvaUsuario(){
-        return id_prova_usuario;
     }
     
     public Date getData(){
@@ -39,4 +31,16 @@ public class provas {
     public void setQuestao(Questao quest){
         q.add(quest);
     }
+    
+    public void setData( Date d){
+        data = d;
+    }
+    
+    public Date fromString( String a ) { // entra string e retorna DATA
+          try {
+            return dateFormat.parse( a );
+          } catch( ParseException e) {
+            return invalidDate;
+            }
+   }
 }
