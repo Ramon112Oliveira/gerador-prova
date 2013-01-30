@@ -10,7 +10,7 @@ public class JDBCExample {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			System.out.println("Driver nÃ£o estÃ¡ bem instalado");
+			System.out.println("Driver no esta bem instalado");
 			//e.printStackTrace();
 			return;
 		}
@@ -18,7 +18,7 @@ public class JDBCExample {
 		System.out.println("Driver registrado");
                 
                 try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Simulador", "postgres","1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/gerenciador", "postgres","1234");
  
 		} catch (SQLException e) {
 			System.out.println("Conexao Falhou");
