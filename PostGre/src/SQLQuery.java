@@ -54,7 +54,7 @@ public class SQLQuery {
     public void rescue(){
         try{
             Statement stm = (Statement) post.getConnection().createStatement();
-            String consulta = "SELECT titulo FROM filmes";
+            String consulta = "SELECT titulo FROM tb_questoes";
             ResultSet rs = stm.executeQuery(consulta);
             while(rs.next()){
                 String titulo = rs.getString("titulo");
@@ -63,5 +63,22 @@ public class SQLQuery {
         }catch(SQLException e){
             System.out.println("Erro no mostrar do banco");
         }
+    }
+    
+    public boolean verifica(int ID){
+        boolean pega = false;
+        try{
+            Statement stm = (Statement) post.getConnection().createStatement();
+            String consulta = "SELECT id_questao FROM tb_questoes";
+            
+            ResultSet rs = stm.executeQuery(consulta);
+            while(rs.next() && pega == false){
+                int id = rs.getInt("id_questao");
+                if(ID == id) pega = true;
+            }
+        }catch(SQLException e){
+            System.out.println("Erro no mostrar do banco");
+        }
+        return pega;
     }
 }

@@ -1,17 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author naysinger
- */
+import javax.swing.JOptionPane;
 public class AddQuestoesGUI extends javax.swing.JFrame {
     SQLQuery sql = new SQLQuery();
-    /**
-     * Creates new form AddQuestoesGUI
-     */
+    
     public AddQuestoesGUI() {
         initComponents();
     }
@@ -50,6 +40,20 @@ public class AddQuestoesGUI extends javax.swing.JFrame {
         jLabel3.setText("Titulo");
 
         jLabel5.setText("Resposta");
+
+        idquestao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idquestaoActionPerformed(evt);
+            }
+        });
+        idquestao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idquestaoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idquestaoFocusLost(evt);
+            }
+        });
 
         jLabel6.setText("A");
 
@@ -153,6 +157,21 @@ public class AddQuestoesGUI extends javax.swing.JFrame {
         Questao q = new Questao(idQuestao, titulo1, A, B, C, D, E, resp);
         sql.updateQuestoes(q.getIdQuestao(), q.getTitulo(),q.getAlternativaA(),q.getAlternativaB(), q.getAlternativaC(),q.getAlternativaD(), q.getAlternativaE(), q.getResposta());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void idquestaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idquestaoActionPerformed
+       
+    }//GEN-LAST:event_idquestaoActionPerformed
+
+    private void idquestaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idquestaoFocusLost
+        SQLQuery q = new SQLQuery();
+        int id = Integer.parseInt(idquestao.getText());
+        boolean pega = q.verifica(id);
+        if(pega == true) JOptionPane.showMessageDialog(null, "Já possui no banco esse id");
+    }//GEN-LAST:event_idquestaoFocusLost
+
+    private void idquestaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idquestaoFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idquestaoFocusGained
 
     /**
      * @param args the command line arguments
