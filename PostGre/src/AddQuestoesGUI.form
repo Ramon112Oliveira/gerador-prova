@@ -121,6 +121,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="idquestao">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idquestaoActionPerformed"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="idquestaoFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="idquestaoFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="titulo">
     </Component>
