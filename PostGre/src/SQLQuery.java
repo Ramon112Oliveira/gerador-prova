@@ -6,11 +6,13 @@ public class SQLQuery {
     JDBCExample post = new JDBCExample();
     String query = null;
     
-    public void updateQuestoes(int id_Questao, String Titulo, String A, String B, String C, String D, String E, int resposta){
+    //public void updateQuestoes(int id_Questao, String Titulo, String A, String B, String C, String D, String E, int resposta){
+     public void updateQuestoes(String Titulo, String A, String B, String C, String D, String E, int resposta){  
         try{
-            query = "INSERT INTO tb_questoes (Id_questao, titulo, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            //query = "INSERT INTO tb_questoes (Id_questao, titulo, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            query = "INSERT INTO tb_questoes (titulo, a, b, c, d, e, resposta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             x = post.getConnection().prepareStatement(query);
-            x.setInt(1,id_Questao);
+            //x.setInt(1,id_Questao);
             x.setString(2,Titulo);
             x.setString(3,A);
             x.setString(4,B);

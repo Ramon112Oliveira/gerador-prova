@@ -19,6 +19,10 @@ public class provas {
         this.data = null;
         this.q = null;
     }
+
+    provas(String text) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
     
     public int getIdProva(){
         return id_prova;
