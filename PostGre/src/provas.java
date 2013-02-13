@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.*;
 
-public class provas {
+public class Provas {
     private int id_prova;
     private Date data;
     private String titulo;
@@ -12,16 +12,12 @@ public class provas {
     public ArrayList<Questao> q = new ArrayList();
     
     
-    public provas(int idProva, String titulo){
+    public Provas(int idProva, String titulo){
         
         this.id_prova = idProva;
         this.titulo = titulo;
         this.data = null;
         this.q = null;
-    }
-
-    provas(String text) {
-        throw new UnsupportedOperationException("Not yet implemented");
     }
     
     public int getIdProva(){
@@ -30,6 +26,10 @@ public class provas {
     
     public Date getData(){
         return data;
+    }
+    
+    public String getTitulo(){
+        return titulo;
     }
     
     public void setQuestao(Questao quest){
