@@ -18,7 +18,7 @@ public class SQLQuery {
             x.setString(4,B);
             x.setString(5,C);
             x.setString(6,D);
-            x.setString(7, E);
+            x.setString(7,E);
             x.setInt(8,resposta);
             x.executeUpdate();
         }catch(SQLException e){
