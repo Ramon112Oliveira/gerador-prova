@@ -12,7 +12,7 @@ public class Provas {
     public ArrayList<Questao> q = new ArrayList();
     
     
-    public Provas(int idProva, String titulo){
+    public provas(int idProva, String titulo){
         
         this.id_prova = idProva;
         this.titulo = titulo;
