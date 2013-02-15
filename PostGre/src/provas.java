@@ -1,8 +1,8 @@
-import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Provas {
+public class provas {
     private int id_prova;
     private Date data;
     private String titulo;

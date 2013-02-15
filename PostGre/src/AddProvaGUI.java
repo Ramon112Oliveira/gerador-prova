@@ -120,9 +120,10 @@ public class AddProvaGUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
       // provas p = new provas(Integer.parseInt(idprova.getText()),  titulo.getText());
-       provas p = new provas(titulo.getText());
-       Date d = p.fromString(dataCriacao.getText());
-       p.setData(d);
+       //provas p = new provas(titulo.getText());
+       //Date d = p.fromString(dataCriacao.getText());
+       //p.setData(d);
+        //ver enum
     }                                        
 
     /**
