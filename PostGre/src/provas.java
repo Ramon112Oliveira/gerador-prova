@@ -11,6 +11,9 @@ public class Provas {
     
     public ArrayList<Questao> q = new ArrayList();
     
+    public Provas(){
+        
+    }
     
     public provas(int idProva, String titulo){
         
@@ -38,6 +41,10 @@ public class Provas {
     
     public void setData( Date d){
         data = d;
+    }
+    
+    public void setTitulo(String t){
+        this.titulo = t;
     }
     
     public Date fromString( String a ) { // entra string e retorna DATA

@@ -10,9 +10,12 @@ public class Questao {
     private String alternativaE;
     private int resposta;
     
-    public Questao(String titulo, String A, String B, String C, String D, String E, int resposta){
-     //public Questao(int idquestao, String titulo, String A, String B, String C, String D, String E, int resposta){
-        //this.idQuestao = idquestao;
+    public Questao(){
+        
+    }
+    
+    public Questao(int idquestao, String titulo, String A, String B, String C, String D, String E, int resposta){
+        this.idQuestao = idquestao;
         this.titulo = titulo;
         this.alternativaA = A;
         this.alternativaB = B;
