@@ -42,6 +42,7 @@ class FrameCategoria extends JFrame {
       setVisible(true);
       initDb();
       setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+      dbToJTable();
    }
 
    private void initDb() {
@@ -78,7 +79,6 @@ class FrameCategoria extends JFrame {
       jPanel = new JPanel(); 
       jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
       jPanel.add(getJScrollPane());
-      jPanel.add(getJButtonSearch());
       return jPanel;
    }
 
@@ -93,18 +93,5 @@ class FrameCategoria extends JFrame {
       DefaultTableModel model = new DefaultTableModel(Categoria.attribNames(), 0);
       jTable.setModel(model);
       return jTable;
-   }
-
-   private JButton getJButtonSearch() {
-      jButtonSearch = new JButton();
-      jButtonSearch.setAlignmentX(Component.CENTER_ALIGNMENT);
-      jButtonSearch.setText("Pesquisar");
-
-      jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent e) {
-            dbToJTable();
-         }
-      });
-      return jButtonSearch;
    }
 }

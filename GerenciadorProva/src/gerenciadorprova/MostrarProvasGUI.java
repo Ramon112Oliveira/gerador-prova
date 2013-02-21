@@ -46,6 +46,7 @@ class FrameProva extends JFrame {
       setVisible(true);
       initDb();
       setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+      dbToJTable();
    }
 
    private void initDb() {
@@ -82,7 +83,6 @@ class FrameProva extends JFrame {
       jPanel = new JPanel(); 
       jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
       jPanel.add(getJScrollPane());
-      jPanel.add(getJButtonSearch());
       return jPanel;
    }
 
@@ -97,19 +97,6 @@ class FrameProva extends JFrame {
       DefaultTableModel model = new DefaultTableModel(Prova.attribNames(), 0);
       jTable.setModel(model);
       return jTable;
-   }
-
-   private JButton getJButtonSearch() {
-      jButtonSearch = new JButton();
-      jButtonSearch.setAlignmentX(Component.CENTER_ALIGNMENT);
-      jButtonSearch.setText("Pesquisar");
-
-      jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent e) {
-            dbToJTable();
-         }
-      });
-      return jButtonSearch;
    }
 }
 
